@@ -1,0 +1,107 @@
+@import '../../partial';
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: yellow;
+    overflow: hidden;
+    perspective: 500px;
+
+    #logo{
+        @include flex(row,flex-start,center,10px);
+        width: 200px;
+        padding: 10px;
+        img{
+            width: 50px;
+        }
+    }
+
+    i {
+        font-size: 30px;
+        @include pos(5%, auto, auto, 95%);
+        color: black;
+        border: 2px solid white;
+        border-radius: 50%;
+        padding: 5px 13px;
+    }
+
+    h1 {
+        font-size: 20vw;
+        @include pos(45%, auto, auto, 50%);
+        color: white;
+    }
+
+    #bannerBtn {
+        @include pos(90%, auto, auto, 15%);
+        color: black;
+        @include flex(row,center,center,20px);
+        button{
+            width: 100px;
+            padding: 5px 10px;
+            background-color: yellow;
+            border: 5px solid white;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+    }
+
+    #icon{
+        @include pos(90%, auto, auto, 80%);
+        width: 600px;
+        font-size: 20px;
+        color: black;
+    }
+
+    #bannerImg2 {
+        @include pos(40%, auto, auto, 50%);
+        width: 500px;
+    }
+
+    & section {
+        position: absolute;
+        top: 100%;
+        left: 5%;
+        width: 40vw;
+        text-align: center;
+        line-height: 30px;
+        overflow: hidden;
+    }
+
+
+
+    @media screen and (max-width : 800px) {
+
+        #logo{
+            @include flex(row,flex-start,center,10px);
+            width: 200px;
+            img{
+                width: 50px;
+            }
+        }
+        
+        i {
+            @include pos(5%, auto, auto, 92%);
+            font-size: 20px;
+            padding: 5px 13px;
+        }
+
+        #bannerBtn {
+            @include pos(70%, auto, auto, 50%);
+            color: black;
+            @include flex(row,center,center,80px);
+        }
+
+        #icon{
+            @include pos(90%, auto, auto, 50%);
+            @include flex(row,center,center,20px);
+            width: 90vw;
+        }
+
+        #bannerImg2 {
+            @include pos(40%, auto, auto, 60%);
+            width: 250px;
+        }
+    }
+
+}

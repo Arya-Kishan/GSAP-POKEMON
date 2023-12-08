@@ -1,0 +1,16 @@
+@mixin flex($a, $b, $c, $d) {
+    display: flex;
+    flex-direction: $a;
+    justify-content: $b;
+    align-items: $c;
+    gap: $d;
+}
+
+@mixin pos($t: auto, $r: auto, $b: auto, $l: auto) {
+    position: absolute;
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+    transform: translate(-50%, -50%);
+}
