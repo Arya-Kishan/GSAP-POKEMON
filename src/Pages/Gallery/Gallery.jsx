@@ -32,19 +32,19 @@ export default function Gallery() {
 
             let t1 = gsap.timeline({
                 scrollTrigger: {
-                    trigger: "#gallery1",
-                    markers: true,
-                    start: "-450% 1%",
-                    end: "200% 1%",
+                    trigger: ".gallery",
+                    // markers: true,
+                    start: "0% 100%",
+                    end: "100% 0%",
                     scrub: 1,
                 }
             })
                 .to("#gallery1", {
                     x: "-55%",
-                },'a')
+                }, 'a')
                 .to("#gallery2", {
                     x: "55%",
-                },'a')
+                }, 'a')
 
 
         }, parent)
@@ -55,75 +55,77 @@ export default function Gallery() {
 
 
     return (
-        <div className='gallery' ref={parent}>
+        <div ref={parent}>
+            <div className='gallery'>
 
-            <section id='gallery1'>
-                
-                        <div>
-                            <img src={IMG1} alt="" />
-                            <img src={IMG2} alt="" />
-                            <img src={IMG3} alt="" />
-                            <img src={IMG4} alt="" />
-                            <img src={IMG5} alt="" />
-                            <img src={IMG6} alt="" />
-                            <img src={IMG7} alt="" />
-                            <img src={IMG8} alt="" />
-                            <img src={IMG9} alt="" />
-                            <img src={IMG1} alt="" />
-                            <img src={IMG2} alt="" />
-                            <img src={IMG3} alt="" />
-                            <img src={IMG4} alt="" />
-                            <img src={IMG5} alt="" />
-                            <img src={IMG6} alt="" />
-                            <img src={IMG7} alt="" />
-                            <img src={IMG8} alt="" />
-                            <img src={IMG9} alt="" />
-                            <img src={IMG1} alt="" />
-                            <img src={IMG2} alt="" />
-                            <img src={IMG3} alt="" />
-                            <img src={IMG4} alt="" />
-                            <img src={IMG5} alt="" />
-                            <img src={IMG6} alt="" />
-                            <img src={IMG7} alt="" />
-                            <img src={IMG8} alt="" />
-                            <img src={IMG9} alt="" />
-                        </div>
+                <section id='gallery1'>
 
-                
-            </section>
+                    <div>
+                        <img src={IMG1} alt="" />
+                        <img src={IMG2} alt="" />
+                        <img src={IMG3} alt="" />
+                        <img src={IMG4} alt="" />
+                        <img src={IMG5} alt="" />
+                        <img src={IMG6} alt="" />
+                        <img src={IMG7} alt="" />
+                        <img src={IMG8} alt="" />
+                        <img src={IMG9} alt="" />
+                        <img src={IMG1} alt="" />
+                        <img src={IMG2} alt="" />
+                        <img src={IMG3} alt="" />
+                        <img src={IMG4} alt="" />
+                        <img src={IMG5} alt="" />
+                        <img src={IMG6} alt="" />
+                        <img src={IMG7} alt="" />
+                        <img src={IMG8} alt="" />
+                        <img src={IMG9} alt="" />
+                        <img src={IMG1} alt="" />
+                        <img src={IMG2} alt="" />
+                        <img src={IMG3} alt="" />
+                        <img src={IMG4} alt="" />
+                        <img src={IMG5} alt="" />
+                        <img src={IMG6} alt="" />
+                        <img src={IMG7} alt="" />
+                        <img src={IMG8} alt="" />
+                        <img src={IMG9} alt="" />
+                    </div>
 
-            <section id='gallery2'>
-                        <div>
-                            <img src={IMG10} alt="" />
-                            <img src={IMG11} alt="" />
-                            <img src={IMG12} alt="" />
-                            <img src={IMG13} alt="" />
-                            <img src={IMG14} alt="" />
-                            <img src={IMG15} alt="" />
-                            <img src={IMG16} alt="" />
-                            <img src={IMG17} alt="" />
-                            <img src={IMG18} alt="" />
-                            <img src={IMG10} alt="" />
-                            <img src={IMG11} alt="" />
-                            <img src={IMG12} alt="" />
-                            <img src={IMG13} alt="" />
-                            <img src={IMG14} alt="" />
-                            <img src={IMG15} alt="" />
-                            <img src={IMG16} alt="" />
-                            <img src={IMG17} alt="" />
-                            <img src={IMG18} alt="" />
-                            <img src={IMG10} alt="" />
-                            <img src={IMG11} alt="" />
-                            <img src={IMG12} alt="" />
-                            <img src={IMG13} alt="" />
-                            <img src={IMG14} alt="" />
-                            <img src={IMG15} alt="" />
-                            <img src={IMG16} alt="" />
-                            <img src={IMG17} alt="" />
-                            <img src={IMG18} alt="" />
-                        </div>
-            </section>
 
+                </section>
+
+                <section id='gallery2'>
+                    <div>
+                        <img src={IMG10} alt="" />
+                        <img src={IMG11} alt="" />
+                        <img src={IMG12} alt="" />
+                        <img src={IMG13} alt="" />
+                        <img src={IMG14} alt="" />
+                        <img src={IMG15} alt="" />
+                        <img src={IMG16} alt="" />
+                        <img src={IMG17} alt="" />
+                        <img src={IMG18} alt="" />
+                        <img src={IMG10} alt="" />
+                        <img src={IMG11} alt="" />
+                        <img src={IMG12} alt="" />
+                        <img src={IMG13} alt="" />
+                        <img src={IMG14} alt="" />
+                        <img src={IMG15} alt="" />
+                        <img src={IMG16} alt="" />
+                        <img src={IMG17} alt="" />
+                        <img src={IMG18} alt="" />
+                        <img src={IMG10} alt="" />
+                        <img src={IMG11} alt="" />
+                        <img src={IMG12} alt="" />
+                        <img src={IMG13} alt="" />
+                        <img src={IMG14} alt="" />
+                        <img src={IMG15} alt="" />
+                        <img src={IMG16} alt="" />
+                        <img src={IMG17} alt="" />
+                        <img src={IMG18} alt="" />
+                    </div>
+                </section>
+
+            </div>
         </div>
     )
 }

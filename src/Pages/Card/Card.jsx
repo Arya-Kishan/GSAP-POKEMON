@@ -43,12 +43,16 @@ export default function Card() {
                 let t1 = gsap.timeline({
                     scrollTrigger: {
                         trigger: ".card",
-                        // markers: true,
+                        markers: true,
                         start: "10% 10%",
                         end: "100% 10%",
                         scrub: 1,
                         pin: true,
                     }
+                })
+                .from(".card0",{
+                    opacity:0,
+                    y:"30vh",
                 })
                 .to(".card1",{
                     top:"14%",
@@ -113,7 +117,7 @@ export default function Card() {
 
                                 <div className='moves'>
                                     {
-                                        e?.moves.slice(0, 4).map((e, i) => (
+                                        e?.moves.slice(0, 3).map((e, i) => (
                                             <span key={i}>
                                                 <span>{e.move.name}</span>
                                             </span>

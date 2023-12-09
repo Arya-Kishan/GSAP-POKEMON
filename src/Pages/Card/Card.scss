@@ -7,6 +7,7 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-color: yellow;
     
     
     & > section {
@@ -41,7 +42,7 @@
                 flex-wrap: wrap;
 
                 &>span {
-                    border: 2px solid yellow;
+                    border: 2px solid green;
                     padding: 5px;
                     width: 150px;
                     text-align: center;

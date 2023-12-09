@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import './App.css'
-import Banner from './Pages/Banner/Banner'
-import Card from './Pages/Card/Card'
-import Horizontal from './Pages/Horizontal/Horizontal'
-import Gallery from './Pages/Gallery/Gallery'
+import { Route, Routes } from 'react-router-dom';
+import Homepage from './Pages/Homepage/Homepage';
+const Detail = React.lazy(() => import('./Pages/Detail/Detail'));
 
 export default function App() {
   return (
     <div>
-      <Banner/>
-      <Card/>
-      <Horizontal/>
-      <Gallery/>
+      <Suspense fallback={<div>Laoding...</div>} >
+        <Routes>
+          <Route path='/' element={<Homepage/>} />
+          <Route path='/detail/:name' element={<Detail/>} />
+        </Routes>
+      </Suspense>
     </div>
   )
 }

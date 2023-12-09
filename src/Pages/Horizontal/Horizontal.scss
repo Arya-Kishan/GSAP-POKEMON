@@ -2,10 +2,11 @@
 
 .Horizontal {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     overflow: scroll;
     position: relative;
     overflow: hidden;
+    background-color: yellow;
 
     &>section {
         position: absolute;
@@ -49,7 +50,6 @@
 
         img {
             width: 350px;
-            // @include pos(50%, auto, auto, 50%);
             @include pos(130%, auto, auto, 80%);
         }
 

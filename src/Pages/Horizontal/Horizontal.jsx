@@ -52,6 +52,7 @@ export default function Horizontal() {
                 })
                     .to("#horH1", {
                         opacity: 0,
+                        y:"-30vh",
                     })
                     .to("#horHead0", {
                         top: "10%",
