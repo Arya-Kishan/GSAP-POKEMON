@@ -9,6 +9,8 @@ import Range from '../../components/Range'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function Card() {
     gsap.registerPlugin(ScrollTrigger)
@@ -119,7 +121,9 @@ export default function Card() {
 
                             <div className='cardGrid1'>
 
-                                <div><img src={e.pic} alt="" /></div>
+                                <div><LazyLoadImage
+                                    effect="blur"
+                                    src={e.pic} /></div>
 
                                 <h1>{e.name}</h1>
 

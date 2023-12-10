@@ -43,7 +43,7 @@ export default function Horizontal() {
                 let t1 = gsap.timeline({
                     scrollTrigger: {
                         trigger: ".Horizontal",
-                        markers: true,
+                        // markers: true,
                         start: "10% 10%",
                         end: "200% 10%",
                         scrub: 1,

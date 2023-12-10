@@ -2,10 +2,10 @@
 .pokemon{
     padding: 20px;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
     background-color: black;
-    @include flex(row,space-around,center,10px);
+    @include flex(row,space-around,center,20px);
     flex-wrap: wrap;
 
     .pokeBox{

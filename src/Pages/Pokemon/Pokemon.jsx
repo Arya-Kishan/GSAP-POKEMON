@@ -4,11 +4,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 import axiso from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function Pokemon() {
 
     gsap.registerPlugin(ScrollTrigger)
     const parent = useRef()
+    const main = useRef()
     const [detail, setDetail] = useState(null)
     const navigate = useNavigate()
 
@@ -24,11 +27,10 @@ export default function Pokemon() {
             imgArr.push({ name: e, pic: `https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${e}.png` })
         });
         if (window.innerWidth <= 545) {
-            setDetail(imgArr.slice(0,5))
-        }else if(window.innerWidth >= 546){
-            setDetail(imgArr.slice(0,12))
+            setDetail(imgArr.slice(0, 15))
+        } else if (window.innerWidth >= 546) {
+            setDetail(imgArr.slice(0, 40))
         }
-        console.log(typeof(window.innerWidth));
 
     }
 
@@ -38,18 +40,29 @@ export default function Pokemon() {
         navigate(`/detail/${name}`)
     }
 
+    const handleLoad = (e) => {
+
+        let diff = Math.floor(Math.abs(e.target.getBoundingClientRect().bottom - main.current.getBoundingClientRect().bottom))
+
+        if (diff < 58) {
+            e.target.parentElement.parentElement.style.display = 'none';
+        }
+    }
+
     useEffect(() => {
         fetchData();
     }, [])
 
     return (
         <div ref={parent}>
-            <div className='pokemon'>
+            <div className='pokemon' ref={main}>
                 {
                     detail?.map((e, i) => (
-                        <div key={i} className='pokeBox' onClick={() => handleDetail(e.name)}>
+                        <div key={i} className='pokeBox' onClick={() => handleDetail(e.name)} onLoad={handleLoad}>
                             <div><span>{e.name}</span></div>
-                            <div><img id='pokImg' src={e.pic} alt="" /></div>
+                            <div><LazyLoadImage
+                                    effect="blur"
+                                    src={e.pic} /></div>
                         </div>
                     ))
                 }

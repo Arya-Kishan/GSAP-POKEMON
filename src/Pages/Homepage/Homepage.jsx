@@ -13,7 +13,7 @@ export default function Homepage() {
             <Card />
             <Pokemon />
             <Horizontal />
-            {/* <Gallery /> */}
+            <Gallery />
             <Footer/>
         </div>
     )

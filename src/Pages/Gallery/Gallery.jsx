@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import './Gallery.scss'
 import IMG1 from '../../assets/1.png'
 import IMG2 from '../../assets/2.jpg'
@@ -25,6 +25,7 @@ export default function Gallery() {
 
     gsap.registerPlugin(ScrollTrigger)
     const parent = useRef()
+    const [data,setData] = useState(null)
 
     useLayoutEffect(() => {
 
@@ -51,10 +52,18 @@ export default function Gallery() {
 
         return () => ctx1.revert();
 
-    }, [])
+    }, [data])
 
     useEffect(()=>{
-        console.log("GALLERY");
+
+        const observer = new IntersectionObserver(function(entries){
+            entries.forEach((e)=>{
+                if (e.isIntersecting) {
+                    setData("arya")
+                }
+            })
+        })
+        observer.observe(parent.current)
     })
 
 
