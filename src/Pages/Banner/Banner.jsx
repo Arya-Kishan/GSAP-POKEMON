@@ -96,16 +96,3 @@ export default function Banner() {
         </div>
     )
 }
-
-
-
-// {
-//     scrollTrigger: {
-//         trigger: ".banner",
-//         markers: true,
-//         start: "10% 10%",
-//         end: "80% 10%",
-//         scrub: 1,
-//         pin: true,
-//     }
-// }

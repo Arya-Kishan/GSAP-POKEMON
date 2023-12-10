@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import load from '../../assets/load.svg'
 
 export default function Detail() {
 
@@ -61,20 +62,17 @@ export default function Detail() {
     setEvolution1(data)
   }
 
-  console.log(data);
-
   var randomColor = Math.floor(Math.random() * 16777215).toString(16);
 
   useEffect(() => {
     fetchData();
-
   }, [])
 
   return (
     <div className='pokDetail' style={{ backgroundColor: `#${randomColor}` }}>
 
       {
-        data && (
+        data ? (
           <>
             <section className='detailSec1' style={{ backgroundColor: `#${randomColor}` }}>
 
@@ -153,7 +151,7 @@ export default function Detail() {
 
               <div className="detailMoves" ref={moves}>
                 {
-                  data.moves.map((e, i) => (
+                  data.moves.slice(0,30).map((e, i) => (
                     <div key={i}>
                       <span>{e.move.name}</span>
                     </div>
@@ -163,7 +161,9 @@ export default function Detail() {
 
             </section>
           </>
-        )
+        ) : (<>
+        <img id='loading' src={load} alt="" srcSet="" />
+        </>)
       }
 
     </div>

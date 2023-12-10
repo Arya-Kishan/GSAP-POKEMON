@@ -4,6 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 import axiso from 'axios'
 import { useNavigate } from 'react-router-dom'
+import load from '../../assets/load.svg'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -44,8 +45,9 @@ export default function Pokemon() {
 
         let diff = Math.floor(Math.abs(e.target.getBoundingClientRect().bottom - main.current.getBoundingClientRect().bottom))
 
-        if (diff < 58) {
-            e.target.parentElement.parentElement.style.display = 'none';
+        if (diff < 70) {
+            console.log(e.target.parentElement.parentElement.parentElement);
+            e.target.parentElement.parentElement.parentElement.style.display = 'none';
         }
     }
 
@@ -57,14 +59,20 @@ export default function Pokemon() {
         <div ref={parent}>
             <div className='pokemon' ref={main}>
                 {
-                    detail?.map((e, i) => (
-                        <div key={i} className='pokeBox' onClick={() => handleDetail(e.name)} onLoad={handleLoad}>
-                            <div><span>{e.name}</span></div>
-                            <div><LazyLoadImage
-                                    effect="blur"
-                                    src={e.pic} /></div>
-                        </div>
-                    ))
+                    detail?(<>
+                    {
+                        detail?.map((e, i) => (
+                            <div key={i} className='pokeBox' onClick={() => handleDetail(e.name)} onLoad={handleLoad}>
+                                <div><span>{e.name}</span></div>
+                                <div><LazyLoadImage
+                                        effect="blur"
+                                        src={e.pic} /></div>
+                            </div>
+                        ))
+                    }
+                    </>):(<>
+                    <img id='loading' src={load} alt="" srcSet="" />
+                    </>)
                 }
             </div>
         </div>

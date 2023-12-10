@@ -8,11 +8,12 @@
     overflow: hidden;
     perspective: 500px;
 
-    #logo{
-        @include flex(row,flex-start,center,10px);
+    #logo {
+        @include flex(row, flex-start, center, 10px);
         width: 200px;
         padding: 10px;
-        img{
+
+        img {
             width: 50px;
         }
     }
@@ -35,8 +36,9 @@
     #bannerBtn {
         @include pos(90%, auto, auto, 15%);
         color: black;
-        @include flex(row,center,center,20px);
-        button{
+        @include flex(row, center, center, 20px);
+
+        button {
             width: 100px;
             padding: 5px 10px;
             background-color: yellow;
@@ -46,7 +48,7 @@
         }
     }
 
-    #icon{
+    #icon {
         @include pos(90%, auto, auto, 80%);
         width: 600px;
         font-size: 20px;
@@ -72,14 +74,15 @@
 
     @media screen and (max-width : 800px) {
 
-        #logo{
-            @include flex(row,flex-start,center,10px);
+        #logo {
+            @include flex(row, flex-start, center, 10px);
             width: 200px;
-            img{
+
+            img {
                 width: 50px;
             }
         }
-        
+
         i {
             @include pos(5%, auto, auto, 92%);
             font-size: 20px;
@@ -89,12 +92,12 @@
         #bannerBtn {
             @include pos(70%, auto, auto, 50%);
             color: black;
-            @include flex(row,center,center,80px);
+            @include flex(row, center, center, 80px);
         }
 
-        #icon{
+        #icon {
             @include pos(90%, auto, auto, 50%);
-            @include flex(row,center,center,20px);
+            @include flex(row, center, center, 20px);
             width: 90vw;
         }
 
@@ -104,4 +107,67 @@
         }
     }
 
+}
+
+#fire1 {
+    width: 100px;
+    position: fixed;
+    bottom: -20vh;
+    left: 10vw;
+}
+
+#fire2 {
+    width: 100px;
+    position: fixed;
+    bottom: -30vh;
+    left: 20vw;
+}
+
+#fire3 {
+    width: 100px;
+    position: fixed;
+    bottom: -40vh;
+    left: 30vw;
+}
+
+#fire4 {
+    width: 100px;
+    position: fixed;
+    bottom: -50vh;
+    left: 40vw;
+}
+
+#fire5 {
+    width: 100px;
+    position: fixed;
+    bottom: -25vh;
+    left: 50vw;
+}
+
+#fire6 {
+    width: 100px;
+    position: fixed;
+    bottom: -35vh;
+    left: 60vw;
+}
+
+#fire7 {
+    width: 100px;
+    position: fixed;
+    bottom: -22vh;
+    left: 70vw;
+}
+
+#fire8 {
+    width: 100px;
+    position: fixed;
+    bottom: -41vh;
+    left: 80vw;
+}
+
+#fire9 {
+    width: 100px;
+    position: fixed;
+    bottom: -66vh;
+    left: 90vw;
 }
