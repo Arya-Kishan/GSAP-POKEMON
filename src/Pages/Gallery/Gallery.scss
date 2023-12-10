@@ -3,6 +3,8 @@
     height: 320px;
     position: relative;
     overflow: hidden;
+    background-color: yellow;
+    border: 2px solid yellow;
 
     #gallery1{
         width: 4400px;
@@ -28,4 +30,5 @@
         box-shadow: 0 0 5px 3px black;
         margin: 10px;
     }
+
 }

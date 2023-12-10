@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import './Gallery.scss'
 import IMG1 from '../../assets/1.png'
 import IMG2 from '../../assets/2.jpg'
@@ -14,7 +14,7 @@ import IMG11 from '../../assets/11.jpg'
 import IMG12 from '../../assets/12.jpg'
 import IMG13 from '../../assets/13.jpg'
 import IMG14 from '../../assets/14.jpg'
-import IMG15 from '../../assets/15.jpg'
+import IMG15 from '../../assets/15.png'
 import IMG16 from '../../assets/16.jpg'
 import IMG17 from '../../assets/17.jpg'
 import IMG18 from '../../assets/18.jpg'
@@ -40,10 +40,10 @@ export default function Gallery() {
                 }
             })
                 .to("#gallery1", {
-                    x: "-55%",
+                    left: "-100%",
                 }, 'a')
                 .to("#gallery2", {
-                    x: "55%",
+                    right: "-100%",
                 }, 'a')
 
 
@@ -52,6 +52,10 @@ export default function Gallery() {
         return () => ctx1.revert();
 
     }, [])
+
+    useEffect(()=>{
+        console.log("GALLERY");
+    })
 
 
     return (

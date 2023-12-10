@@ -6,7 +6,7 @@ import IMG11 from '../../assets/11.jpg'
 import IMG12 from '../../assets/12.jpg'
 import IMG13 from '../../assets/13.jpg'
 import IMG14 from '../../assets/14.jpg'
-import IMG15 from '../../assets/15.jpg'
+import IMG15 from '../../assets/15.png'
 import Range from '../../components/Range'
 
 export default function Horizontal() {
@@ -33,7 +33,7 @@ export default function Horizontal() {
             });
 
     }
-    console.log(detail);
+    // console.log(detail);
 
     useLayoutEffect(() => {
 
@@ -43,17 +43,20 @@ export default function Horizontal() {
                 let t1 = gsap.timeline({
                     scrollTrigger: {
                         trigger: ".Horizontal",
-                        // markers: true,
+                        markers: true,
                         start: "10% 10%",
-                        end: "100% 10%",
+                        end: "200% 10%",
                         scrub: 1,
                         pin: true,
                     }
                 })
+                    .to(".Horizontal", {
+                        backgroundColor: 'white',
+                    },'z')
                     .to("#horH1", {
                         opacity: 0,
-                        y:"-30vh",
-                    })
+                        y: "-30vh",
+                    },'z')
                     .to("#horHead0", {
                         top: "10%",
                         left: "50%",
@@ -172,6 +175,9 @@ export default function Horizontal() {
                     .to("#horFeature24", {
                         right: "-6%",
                     }, 'i')
+                    .to(".Horizontal", {
+                        backgroundColor: 'yellow',
+                    },'i')
 
             }, parent)
 

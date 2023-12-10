@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import './Pokemon.scss'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
@@ -23,11 +23,16 @@ export default function Pokemon() {
         arr1.forEach((e, i) => {
             imgArr.push({ name: e, pic: `https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${e}.png` })
         });
-        setDetail(imgArr)
+        if (window.innerWidth <= 545) {
+            setDetail(imgArr.slice(0,5))
+        }else if(window.innerWidth >= 546){
+            setDetail(imgArr.slice(0,12))
+        }
+        console.log(typeof(window.innerWidth));
 
     }
 
-    console.log(detail);
+    // console.log(detail);
 
     const handleDetail = (name) => {
         navigate(`/detail/${name}`)
@@ -39,13 +44,12 @@ export default function Pokemon() {
 
     return (
         <div ref={parent}>
-            <h1 id='detailHead'>DRAGON</h1>
             <div className='pokemon'>
                 {
-                    detail?.slice(0,6).map((e, i) => (
-                        <div key={i} className='pokeBox' onClick={()=>handleDetail(e.name)}>
+                    detail?.map((e, i) => (
+                        <div key={i} className='pokeBox' onClick={() => handleDetail(e.name)}>
                             <div><span>{e.name}</span></div>
-                            <div><img src={e.pic} alt="" /></div>
+                            <div><img id='pokImg' src={e.pic} alt="" /></div>
                         </div>
                     ))
                 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Detail.scss'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -10,6 +10,7 @@ export default function Detail() {
   const { name } = useParams()
   const [data, setData] = useState(null)
   const [evolution1, setEvolution1] = useState(null)
+  const navigate = useNavigate()
   let about = useRef()
   let base = useRef()
   let evolution = useRef()
@@ -78,7 +79,7 @@ export default function Detail() {
             <section className='detailSec1' style={{ backgroundColor: `#${randomColor}` }}>
 
               <div className='detailBack'>
-                <div><KeyboardBackspaceIcon /></div>
+                <div onClick={()=>navigate(-1)}><KeyboardBackspaceIcon /></div>
                 <div><FavoriteBorderIcon /></div>
               </div>
 
@@ -154,7 +155,7 @@ export default function Detail() {
                 {
                   data.moves.map((e, i) => (
                     <div key={i}>
-                      <span><span>{i + 1} </span><strong>{e.move.name}</strong></span>
+                      <span>{e.move.name}</span>
                     </div>
                   ))
                 }

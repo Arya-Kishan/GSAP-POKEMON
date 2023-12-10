@@ -1,0 +1,84 @@
+@import '../../partial';
+
+.footer {
+    width: 100%;
+    display: grid;
+    padding: 20px;
+    height: 250px;
+    grid-template-columns: 1fr 1fr;
+    background-color: yellow;
+
+    .footerSec1 {
+        @include flex(column, center, center, 10px);
+
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            color: #6C63FF;
+        }
+
+        .input {
+            @include flex(row, flex-start, center, 0px);
+            text-align: center;
+            background-color: white;
+
+            input {
+                outline: none;
+                padding: 10px;
+                border: 2px solid white;
+            }
+
+            button {
+                padding: 10px;
+                background-color: transparent;
+                border-radius: 10px;
+                border: 2px solid white;
+                color: #6C63FF;
+            }
+        }
+    }
+
+    .footerSec2 {
+        @include flex(column, center, center, 10px);
+
+        img {
+            width: 20%;
+        }
+    }
+
+    @media screen and (max-width:1200px) {
+        .footerSec1 {
+            h1 {
+                font-size: 20px;
+            }
+
+            .input {
+                input {
+                    outline: none;
+                    padding: 3px;
+                    border: 2px solid white;
+                }
+
+                button {
+                    padding: 3px;
+                    background-color: transparent;
+                    border-radius: 10px;
+                    border: 2px solid white;
+                    color: #6C63FF;
+                }
+            }
+
+        }
+
+
+        .footerSec2 {
+            @include flex(column, center, center, 10px);
+
+            img {
+                width: 40%;
+            }
+        }
+
+
+    }
+}

@@ -5,14 +5,14 @@
     & section {
         height: 10px;
         width: 100%;
-        border: 2px solid green;
+        border: 2px solid black;
         border-radius: 5px;
         @include flex(row, flex-start, center, 0px);
 
         & div {
             height: 100%;
-            border: 0px solid green;
-            background-color: green;
+            border: 0px solid white;
+            background-color: black;
             border-radius: 5px;
         }
     }

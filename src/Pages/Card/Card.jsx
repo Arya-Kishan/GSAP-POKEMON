@@ -8,10 +8,12 @@ import sixth from '../../assets/6.jpg'
 import Range from '../../components/Range'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
+import { useNavigate } from 'react-router-dom'
 
 export default function Card() {
     gsap.registerPlugin(ScrollTrigger)
     const parent = useRef()
+    const navigate = useNavigate()
 
     const [detail, setDetail] = useState(null)
 
@@ -34,6 +36,10 @@ export default function Card() {
 
     }
 
+    const handleClick = (name) => {
+        navigate(`/detail/${name}`)
+    }
+
     useLayoutEffect(() => {
 
         if (detail) {
@@ -43,48 +49,54 @@ export default function Card() {
                 let t1 = gsap.timeline({
                     scrollTrigger: {
                         trigger: ".card",
-                        markers: true,
+                        // markers: true,
                         start: "10% 10%",
                         end: "100% 10%",
                         scrub: 1,
                         pin: true,
                     }
                 })
-                .from(".card0",{
-                    opacity:0,
-                    y:"30vh",
-                })
-                .to(".card1",{
-                    top:"14%",
-                })
-                .to(".card0",{
-                    scale:.95,
-                    boxShadow:"0 0 12px 8px black",
-                })
-                .to(".card2",{
-                    top:"18%",
-                })
-                .to(".card1",{
-                    scale:.96,
-                    boxShadow:"0 0 12px 8px black",
-                })
-                .to(".card3",{
-                    top:"22%",
-                })
-                .to(".card2",{
-                    scale:.97,
-                    boxShadow:"0 0 12px 8px black",
-                })
-                .to(".card4",{
-                    top:"26%",
-                    boxShadow:"0 0 12px 8px black",
-                })
-                .to(".card3",{
-                    scale:.98,
-                    boxShadow:"0 0 12px 8px black",
-                })
+                    .to(".card", {
+                        backgroundColor: 'black',
+                    })
+                    .to(".card section", {
+                        backgroundColor: 'white',
+                    })
+                    .from(".card0", {
+                        opacity: 0,
+                        y: "30vh",
+                    })
+                    .to(".card1", {
+                        top: "14%",
+                    })
+                    .to(".card0", {
+                        scale: .95,
+                        boxShadow: "0 0 12px 8px black",
+                    })
+                    .to(".card2", {
+                        top: "18%",
+                    })
+                    .to(".card1", {
+                        scale: .96,
+                        boxShadow: "0 0 12px 8px black",
+                    })
+                    .to(".card3", {
+                        top: "22%",
+                    })
+                    .to(".card2", {
+                        scale: .97,
+                        boxShadow: "0 0 12px 8px black",
+                    })
+                    .to(".card4", {
+                        top: "26%",
+                        boxShadow: "0 0 12px 8px black",
+                    })
+                    .to(".card3", {
+                        scale: .98,
+                        boxShadow: "0 0 12px 8px black",
+                    })
 
-            },parent)
+            }, parent)
 
             return () => ctx1.revert();
 
@@ -103,7 +115,7 @@ export default function Card() {
                 {
                     detail?.map((e, i) => (
 
-                        <section key={e.id} className={`card${i}`}>
+                        <section key={e.id} className={`card${i}`} onClick={() => handleClick(e.name)}>
 
                             <div className='cardGrid1'>
 
