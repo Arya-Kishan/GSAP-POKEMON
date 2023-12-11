@@ -5,6 +5,7 @@ import Horizontal from '../Horizontal/Horizontal'
 import Gallery from '../Gallery/Gallery'
 import Pokemon from '../Pokemon/Pokemon'
 import Footer from '../Footer/Footer'
+import More from '../More/More'
 
 export default function Homepage() {
     return (

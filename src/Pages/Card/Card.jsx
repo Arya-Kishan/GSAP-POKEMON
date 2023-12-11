@@ -53,21 +53,21 @@ export default function Card() {
                         trigger: ".card",
                         // markers: true,
                         start: "10% 10%",
-                        end: "100% 10%",
+                        end: "400% 10%",
                         scrub: 1,
                         pin: true,
                     }
                 })
                     .to(".card", {
                         backgroundColor: 'black',
-                    })
+                    },'g')
                     .to(".card section", {
                         backgroundColor: 'white',
-                    })
+                    },'g')
                     .from(".card0", {
                         opacity: 0,
                         y: "30vh",
-                    })
+                    },'g')
                     .to(".card1", {
                         top: "14%",
                     })
@@ -113,7 +113,7 @@ export default function Card() {
     return (
         <div ref={parent}>
 
-            <div className='card'>
+            <div className='card' id='pokemon'>
                 {
                     detail?.map((e, i) => (
 

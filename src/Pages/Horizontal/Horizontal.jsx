@@ -6,7 +6,7 @@ import IMG11 from '../../assets/11.jpg'
 import IMG12 from '../../assets/12.jpg'
 import IMG13 from '../../assets/13.jpg'
 import IMG14 from '../../assets/14.jpg'
-import IMG15 from '../../assets/15.png'
+import IMG15 from '../../assets/151.png'
 import Range from '../../components/Range'
 
 export default function Horizontal() {
@@ -45,7 +45,7 @@ export default function Horizontal() {
                         trigger: ".Horizontal",
                         // markers: true,
                         start: "10% 10%",
-                        end: "200% 10%",
+                        end: "500% 10%",
                         scrub: 1,
                         pin: true,
                     }

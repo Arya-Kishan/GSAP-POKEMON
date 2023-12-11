@@ -4,58 +4,59 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import pikachu from '../../assets/pikachu.png'
 import ball from '../../assets/ball.png'
-import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import { useNavigate } from 'react-router-dom'
+import light2 from '../../assets/light2.avif'
 
 export default function Banner() {
 
     gsap.registerPlugin(ScrollTrigger)
     const parent = useRef()
+    const navigate = useNavigate()
 
     useLayoutEffect(() => {
 
         const ctx1 = gsap.context(() => {
 
             let t1 = gsap.timeline()
-            .from("#bannerhead1", {
-                x: "-250%",
-                duration:.5,
-            },'a')
-            .from("#bannerImg1", {
-                x: "-250%",
-                duration:.5,
-            },'a')
-            .from("i", {
-                x: "350%",
-                duration:.5,
-            },'a')
-            .from("#bannerImg2", {
-                rotateY:"360deg",
-                y: "-120vh",
-                x:"100vw",
-                duration:1,
-            },'b')
-            .from("#bannerhead2", {
-                rotateX:"720deg",
-                y: "120vh",
-                x:"100vw",
-                duration:1,
-            },'b')
-            .from("#bannerBtn", {
-                x:"-100vw",
-                duration:.5,
-            },'a')
-            .from("#icon", {
-                x:"100vw",
-                duration:.5,
-            },'a')
-            .to("#bannerImg2", {
-                scale:1.1,
-            })
-            .to("#bannerImg2", {
-                scale:1,
-                filter:"drop-shadow(0 0 15px black)",
-            })
+                .from("#bannerhead1", {
+                    x: "-250%",
+                    duration: .5,
+                }, 'a')
+                .from("#bannerImg1", {
+                    x: "-250%",
+                    duration: .5,
+                }, 'a')
+                .from("i", {
+                    x: "350%",
+                    duration: .5,
+                }, 'a')
+                .from("#bannerImg2", {
+                    rotateY: "360deg",
+                    y: "-120vh",
+                    x: "100vw",
+                    duration: 1,
+                }, 'b')
+                .from("#bannerhead2", {
+                    rotateX: "720deg",
+                    y: "120vh",
+                    x: "100vw",
+                    duration: 1,
+                }, 'b')
+                .from("#bannerBtn", {
+                    x: "-100vw",
+                    duration: .5,
+                }, 'a')
+                .from("#icon", {
+                    x: "100vw",
+                    duration: .5,
+                }, 'a')
+                .to("#bannerImg2", {
+                    scale: 1.1,
+                })
+                .to("#bannerImg2", {
+                    scale: 1,
+                    filter: "drop-shadow(0 0 15px black)",
+                })
 
         }, parent)
 
@@ -63,12 +64,39 @@ export default function Banner() {
 
     }, [])
 
+    const handleLight = () => {
+        console.log("hii");
+
+        const ctx2 = gsap.context(() => {
+
+            let tl = gsap.timeline()
+                .to(".banner", {
+                    opacity: 0,
+                    duration: 1,
+                })
+                .to("#light", {
+                    display:"flex",
+                })
+                .to("#light", {
+                    display:"none",
+                })
+                .to(".banner", {
+                    opacity: 1,
+                    duration: 1,
+                })
+
+        }, parent)
+
+        return () => ctx2.revert()
+
+    }
+
 
     return (
         <div ref={parent}>
             <div className='banner'>
 
-                <i>P</i>
+                <i><a href="#pokemon">P</a></i>
 
                 <h1 id='bannerhead2'>PIKACHU</h1>
                 <img id='bannerImg2' src={pikachu} alt="" srcSet="" />
@@ -79,12 +107,12 @@ export default function Banner() {
                 </div>
 
                 <div id='bannerBtn'>
-                    <button id='bannerBtn1'>FIRE</button>
-                    <button id='bannerBtn2'>SHOCK</button>
+                    <button id='bannerBtn1' onClick={() => navigate('/more')}>MORE</button>
+                    <button id='bannerBtn2' onClick={handleLight}>SHOCK</button>
                 </div>
 
                 <div id="icon">
-                When it smashes its opponents with its bolt-shaped tail, it delivers a surge of electricity equivalent to a lightning strike. Its Gigantamax power expanded, forming its supersized body and towering tail.
+                    When it smashes its opponents with its bolt-shaped tail, it delivers a surge of electricity equivalent to a lightning strike. Its Gigantamax power expanded, forming its supersized body and towering tail.
                 </div>
 
                 <section id='bannerSec1'>
@@ -93,6 +121,7 @@ export default function Banner() {
                 </section>
 
             </div>
+            <img id='light' src={light2} alt="" srcset="" />
         </div>
     )
 }

@@ -1,0 +1,88 @@
+@import '../../partial';
+
+.more {
+    color: white;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rebeccapurple;
+
+    &>div:nth-child(1) {
+        @include flex(row, space-between, center, 0px);
+        box-shadow: 0 0 5px 2px white;
+        background-color:rebeccapurple;
+        width: 100%;
+        height: 56px;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        h2 {
+            @include flex(row, space-between, center, 5px);
+            cursor: pointer;
+        }
+    }
+
+    &>div:nth-child(2) {
+        @include flex(row, space-between, center, 20px);
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 10px;
+
+        .moreCard {
+            @include flex(column, space-evenly, center, 0px);
+            padding: 5px;
+            width: 150px;
+            height: 150px;
+
+            &>div:nth-child(1) {
+                @include flex(row, center, center, 0px);
+            }
+
+            &>div:nth-child(2) {
+                text-transform: capitalize;
+                text-align: center;
+                width: 100%;
+            }
+
+        }
+    }
+
+
+    .filter1 {
+        position: fixed;
+        top: 120px;
+        right: 1%;
+        width: 90%;
+        border-radius: 10px;
+        padding: 10px;
+        background: linear-gradient(to right, rebeccapurple,black);
+        display: none;
+        opacity: 0;
+        font-size: 20px;
+        @include flex(column, space-evenly, center, 10px);
+
+        & div {
+            @include flex(row, space-evenly, center, 10px);
+            flex-wrap: wrap;
+            text-transform: capitalize;
+            cursor: pointer;
+            span{
+                border-bottom: 2px solid white;
+            }
+        }
+
+        button {
+            border-radius: 10px;
+            padding: 5px 8px;
+            border: transparent;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 990px) {
+            width: 40%;
+            transform: translate(-50%, -24%);
+        }
+    }
+}

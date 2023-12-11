@@ -4,7 +4,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    background-color: yellow;
+    background: linear-gradient(to top,yellow,orange);
     overflow: hidden;
     perspective: 500px;
 
@@ -31,6 +31,9 @@
         font-size: 20vw;
         @include pos(45%, auto, auto, 50%);
         color: white;
+        background: linear-gradient(to right,black,orange,black);
+        background-clip:text;
+        -webkit-text-fill-color: transparent;
     }
 
     #bannerBtn {
@@ -41,8 +44,8 @@
         button {
             width: 100px;
             padding: 5px 10px;
-            background-color: yellow;
-            border: 5px solid white;
+            background-color: rgb(253, 253, 61);
+            border: 3px solid rgb(253, 253, 61);
             border-radius: 10px;
             font-size: 17px;
         }
@@ -57,7 +60,7 @@
 
     #bannerImg2 {
         @include pos(40%, auto, auto, 50%);
-        width: 500px;
+        width: 300px;
     }
 
     & section {
@@ -103,7 +106,7 @@
 
         #bannerImg2 {
             @include pos(40%, auto, auto, 60%);
-            width: 250px;
+            width: 150px;
         }
     }
 
@@ -170,4 +173,14 @@
     position: fixed;
     bottom: -66vh;
     left: 90vw;
+}
+
+#light{
+    border: 2px solid red;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
 }
