@@ -8,8 +8,8 @@ Welcome to the Pokemon project, a web application designed to provide a details 
 
 # About Pokemon 🕵️
 
-Pokemon app is a web application where a user can get to know diffrent types of pokemon with details  [here](https://arya-gsap-pokemon.netlify.app/)) .
-Basically I amde this project to practice my `GSAP` skills used in making animated website with pokedox api.
+Pokemon app is a web application where a user can get to know different types of pokemon with details  [here](https://arya-gsap-pokemon.netlify.app/).
+Basically I made this project to practice my `GSAP` skills used in making animated website with pokedox api.
 
 # Features 🤖
 
